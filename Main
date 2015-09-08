@@ -1,10 +1,13 @@
-#ifndef QUADCOPTER_H
-#define QUADCOPTER_H
+#ifndef __QUADCOPTER_H__
+#define __QUADCOPTER_H__
 
 #include <stdint.h>
 
+#define 
+
 // get the orientation: 0 -> flat, (-)127 -> max tilt
-int8_t getPitch(); // leaning forwards / backwards: positive -> forwards
+int8_t getPitch();// leaning forwards / backwards: positive -> forwards
+
 int8_t getRoll(); // leaning right / left: positive -> right
 
 // get the height: 0 -> on the ground, 255 -> 255 inches high
@@ -22,3 +25,11 @@ void setBL(uint8_t); // back left
 #define BACK_RIGHT_MOTOR 4
 
 #endif
+
+void setup()
+{
+}
+
+void MainLoop()
+{
+}
