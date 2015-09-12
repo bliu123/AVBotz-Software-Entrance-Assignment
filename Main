@@ -15,14 +15,13 @@ uint8_t getHeight();
 
 // set the motor strength: 0 -> off, 255 -> max thrust
 void setFR(uint8_t); // front right
+
 void setFL(uint8_t); // front left
+
 void setBR(uint8_t); // back right
+
 void setBL(uint8_t); // back left
 
-#define FRONT_LEFT_MOTOR 1
-#define FRONT_RIGHT_MOTOR 2
-#define BACK_LEFT_MOTOR 3
-#define BACK_RIGHT_MOTOR 4
 
 #endif
 
@@ -32,4 +31,7 @@ void setup()
 
 void MainLoop()
 {
+  while(1){
+  
+  }
 }
