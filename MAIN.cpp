@@ -1,5 +1,3 @@
-#include <ctime> //Allow for more random numbers
-#include <cstdlib> //Allow for more random numbers
 #include <iostream>
 using namespace std;
 #ifndef __QUADCOPTER_H__
