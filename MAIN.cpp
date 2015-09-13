@@ -23,13 +23,13 @@ uint8_t getHeight (int minHeight, int maxHeight)
 int main()
 {
   srand(time(NULL));
-  int initialPitch = getPitch(-127, 127);
-  int initialRoll = getRoll(-127, 127);
-  int initialHeight = getHeight(0, 255);
-  int desiredPitch = 0;
-  int desiredRoll = 0;
-  int desiredHeight ;
-  cout << "Enter Desired Height (Integer, 1-255): ";
+  double initialPitch = getPitch(-127, 127);
+  double initialRoll = getRoll(-127, 127);
+  double initialHeight = getHeight(0, 255);
+  double desiredPitch = 0;
+  double desiredRoll = 0;
+  double desiredHeight ;
+  cout << "Enter Desired Height (1-255): ";
   cin >> desiredHeight;
   cout << "Initial Pitch: ";
   cout << initialPitch << "\n";
@@ -37,8 +37,8 @@ int main()
   cout << initialRoll << "\n";
   cout << "Initial Height: ";
   cout << initialHeight << "\n";
-  cout << "Desired Pitch: 0\n";
-  cout << "Desired Roll: 0\n";
+  cout << "Desired Pitch: " << desiredPitch << "\n";
+  cout << "Desired Roll: " << desiredRoll << "\n";
   cout << "Desired Height: " << desiredHeight << "\n";
 }
 
