@@ -2,22 +2,25 @@
 #include <cstdlib> //Allow for more random numbers
 #include <iostream>
 using namespace std;
+#ifndef __QUADCOPTER_H__
+#define __QUADCOPTER_H__
 
-int getPitch (int minPitch, int maxPitch)
+int8_t getPitch (int minPitch, int maxPitch)
 {
   return rand() % (maxPitch - minPitch + 1) + minPitch;
 }
 
-int getRoll (int minRoll, int maxRoll)
+int8_t getRoll (int minRoll, int maxRoll)
 {
   return rand() % (maxRoll - minRoll + 1) + minRoll;
 }
 
-int getHeight (int minHeight, int maxHeight)
+uint8_t getHeight (int minHeight, int maxHeight)
 {
   return rand() % (maxHeight - minHeight + 1) + minHeight;
 }
 
+#endif
 
 int main()
 {
@@ -28,7 +31,7 @@ int main()
   int desiredPitch = 0;
   int desiredRoll = 0;
   int desiredHeight ;
-  cout << "Enter desired height: ";
+  cout << "Enter Desired Height (Integer, 1-255): ";
   cin >> desiredHeight;
   cout << "Initial Pitch: ";
   cout << initialPitch << "\n";
@@ -38,6 +41,6 @@ int main()
   cout << initialHeight << "\n";
   cout << "Desired Pitch: 0\n";
   cout << "Desired Roll: 0\n";
-  cout << "Desired Height:" << desiredHeight << "\n";
+  cout << "Desired Height: " << desiredHeight << "\n";
 }
 
