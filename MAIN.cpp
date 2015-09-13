@@ -3,29 +3,30 @@
 #include <iostream>
 using namespace std;
 
-int randPitch (int minPitch, int maxPitch)
+int getPitch (int minPitch, int maxPitch)
 {
-  return rand() % (maxPitch - minPitch + 1) + minPitch
+  return rand() % (maxPitch - minPitch + 1) + minPitch;
 }
 
+int getRoll (int minRoll, int maxRoll)
+{
+  return rand() % (maxRoll - minRoll + 1) + minRoll;
 }
 
-int getRoll(){
-
+int getHeight (int minHeight, int maxHeight)
+{
+  return rand() % (maxHeight - minHeight + 1) + minHeight;
 }
 
-uint8_t getHeight(){
 
+int main()
+{
+  srand(time(NULL));
+  cout << "Initial Pitch: ";
+  cout << getPitch(-127, 127) << "\n";
+  cout << "Initial Roll: ";
+  cout << getRoll(-127, 127) << "\n";
+  cout << "Initial Height: ";
+  cout << getHeight(0, 255) << "\n";
 }
-
-int main(){
-int pitch1
-  cout << "Enter initial pitch (integer -127 to 127):\n"
-  cin >> pitch1
-  if (pitch1 < -127 || pitch1 > 127)
-  {
-    pitch1 = -123987
-  }
-    return pitch1
-
 
