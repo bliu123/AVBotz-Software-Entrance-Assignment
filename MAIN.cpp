@@ -22,11 +22,22 @@ int getHeight (int minHeight, int maxHeight)
 int main()
 {
   srand(time(NULL));
+  int initialPitch = getPitch(-127, 127);
+  int initialRoll = getRoll(-127, 127);
+  int initialHeight = getHeight(0, 255);
+  int desiredPitch = 0;
+  int desiredRoll = 0;
+  int desiredHeight ;
+  cout << "Enter desired height: ";
+  cin >> desiredHeight;
   cout << "Initial Pitch: ";
-  cout << getPitch(-127, 127) << "\n";
+  cout << initialPitch << "\n";
   cout << "Initial Roll: ";
-  cout << getRoll(-127, 127) << "\n";
+  cout << initialRoll << "\n";
   cout << "Initial Height: ";
-  cout << getHeight(0, 255) << "\n";
+  cout << initialHeight << "\n";
+  cout << "Desired Pitch: 0\n";
+  cout << "Desired Roll: 0\n";
+  cout << "Desired Height:" << desiredHeight << "\n";
 }
 
