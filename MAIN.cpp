@@ -5,30 +5,32 @@ using namespace std;
 
 int8_t getPitch (int minPitch, int maxPitch)
 {
-  return rand() % (maxPitch - minPitch + 1) + minPitch;
+  srand(time(NULL));
+  double initialPitch = rand() % (127 - -127 + 1) + -127
+  return initialPitch
 }
 
 int8_t getRoll (int minRoll, int maxRoll)
 {
-  return rand() % (maxRoll - minRoll + 1) + minRoll;
+  srand(time(NULL));
+  double initialRoll = rand() % (127 - -127 + 1) + -127
+  return initialRoll
 }
 
 uint8_t getHeight (int minHeight, int maxHeight)
 {
-  return rand() % (maxHeight - minHeight + 1) + minHeight;
+  srand(time(NULL));
+  double initialHeight = rand() % (255 - 0 + 1) + 0;
+  return initialHeight;
 }
 
 #endif
 
 int main()
 {
-  srand(time(NULL));
-  double initialPitch = getPitch(-127, 127);
-  double initialRoll = getRoll(-127, 127);
-  double initialHeight = getHeight(0, 255);
-  double desiredPitch = 0;
-  double desiredRoll = 0;
-  double desiredHeight ;
+  double initialPitch = getPitch();
+  double initialRoll = getRoll();
+  double initialHeight = getHeight();
   cout << "Enter Desired Height (1-255): ";
   cin >> desiredHeight;
   cout << "Initial Pitch: ";
