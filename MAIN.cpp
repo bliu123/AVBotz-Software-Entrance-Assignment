@@ -5,7 +5,7 @@ using namespace std;
 
 int8_t getPitch()
 {
-  srand(time(NULL));
+  srand(unsigned(NULL));
   double initialPitch = rand() % (127 - -127 + 1) + -127;
   return initialPitch;
 }
@@ -31,17 +31,35 @@ int main()
   double initialPitch = getPitch();
   double initialRoll = getRoll();
   double initialHeight = getHeight();
-  double desiredHeight
+  double desiredPitch;
+  double desiredRoll;
+  double desiredHeight;
+  
   cout << "Enter Desired Height (1-255): ";
   cin >> desiredHeight;
+  if (desiredHeight < 1 || desiredHeight > 255)
+  {
+    cout << "Invalid Height. Program Terminated.\n";
+    return 0;
+  }
+  
   cout << "Initial Pitch: ";
   cout << initialPitch << "\n";
   cout << "Initial Roll: ";
   cout << initialRoll << "\n";
   cout << "Initial Height: ";
   cout << initialHeight << "\n";
+  
   cout << "Desired Pitch: " << desiredPitch << "\n";
   cout << "Desired Roll: " << desiredRoll << "\n";
   cout << "Desired Height: " << desiredHeight << "\n";
+  
+  while (true){
+    
+  }
+  
+  
+  
+  
 }
 
