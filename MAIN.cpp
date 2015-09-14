@@ -23,7 +23,13 @@ uint8_t getHeight()
   double initialHeight = rand() % (255 - 0 + 1) + 0;
   return initialHeight;
 }
-
+void setFR(uint8_t)
+{
+  FR = initialHeight
+}
+void setFL(uint8_t)
+void setBR(uint8_t)
+void setBL(uint8_t)
 #endif
 
 int main()
