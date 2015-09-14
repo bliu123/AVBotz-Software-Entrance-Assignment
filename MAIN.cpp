@@ -1,5 +1,7 @@
 #include <iostream>
 #include <unistd.h>
+#include <cstdilb>
+#include <ctime>
 using namespace std;
 #ifndef __QUADCOPTER_H__
 #define __QUADCOPTER_H__
@@ -101,7 +103,7 @@ int main()
     cout << "Motors too weak!\n";
     currentHeight *= 1.1;
   }
-  if (currentHeight > desiredHeight)
+  else if (currentHeight > desiredHeight)
   {
     cout << "Motors too strong!\n";
     currentHeight *= .90;
