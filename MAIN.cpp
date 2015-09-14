@@ -78,7 +78,7 @@ int main()
   cout << "\n\n";
   cout << "Readjusting...";
   cout << "\n";
-  usleep(5000000);
+  usleep(4000000);
   
   if (currentPitch < desiredPitch || currentPitch > desiredPitch)
   {
