@@ -6,15 +6,15 @@ using namespace std;
 int8_t getPitch (int minPitch, int maxPitch)
 {
   srand(time(NULL));
-  double initialPitch = rand() % (127 - -127 + 1) + -127
-  return initialPitch
+  double initialPitch = rand() % (127 - -127 + 1) + -127;
+  return initialPitch;
 }
 
 int8_t getRoll (int minRoll, int maxRoll)
 {
   srand(time(NULL));
-  double initialRoll = rand() % (127 - -127 + 1) + -127
-  return initialRoll
+  double initialRoll = rand() % (127 - -127 + 1) + -127;
+  return initialRoll;
 }
 
 uint8_t getHeight (int minHeight, int maxHeight)
