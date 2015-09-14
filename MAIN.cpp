@@ -1,6 +1,6 @@
 #include <iostream>
 #include <unistd.h>
-#include <cstdilb>
+#include <cstdlib>
 #include <ctime>
 using namespace std;
 #ifndef __QUADCOPTER_H__
