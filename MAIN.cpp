@@ -82,7 +82,7 @@ int main()
   {
     currentPitch *= .5;
   }
-  if (-1 > currentPitch < 1)//close enough; time to round down...
+  if (-1 < currentPitch < 1)//close enough; time to round down...
   {
     currentPitch = 0;
   }
@@ -91,7 +91,7 @@ int main()
   {
     currentRoll *= .5;
   }
-  if (-1 > currentRoll < 1)//close enough; time to round down...
+  if (-1 < currentRoll < 1)//close enough; time to round down...
   {
     currentRoll = 0;
   }
