@@ -3,21 +3,21 @@ using namespace std;
 #ifndef __QUADCOPTER_H__
 #define __QUADCOPTER_H__
 
-int8_t getPitch (int minPitch, int maxPitch)
+int8_t getPitch()
 {
   srand(time(NULL));
   double initialPitch = rand() % (127 - -127 + 1) + -127;
   return initialPitch;
 }
 
-int8_t getRoll (int minRoll, int maxRoll)
+int8_t getRoll()
 {
   srand(time(NULL));
   double initialRoll = rand() % (127 - -127 + 1) + -127;
   return initialRoll;
 }
 
-uint8_t getHeight (int minHeight, int maxHeight)
+uint8_t getHeight()
 {
   srand(time(NULL));
   double initialHeight = rand() % (255 - 0 + 1) + 0;
