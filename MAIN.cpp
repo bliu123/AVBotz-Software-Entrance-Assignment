@@ -111,7 +111,7 @@ int main()
   
   double valueHeight = currentHeight - desiredHeight;
   
-  if (-1 < valueHeight && 1 > valueHeight)
+  if (-2 < valueHeight && 2 > valueHeight)
   {
     currentHeight = desiredHeight;
   }
