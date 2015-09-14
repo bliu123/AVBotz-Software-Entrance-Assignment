@@ -101,12 +101,12 @@ int main()
   if (currentHeight < desiredHeight)
   {
     cout << "Motors too weak!\n";
-    currentHeight *= 1.15;
+    currentHeight *= 1.1;
   }
   else if (currentHeight > desiredHeight)
   {
     cout << "Motors too strong!\n";
-    currentHeight *= .85;
+    currentHeight *= .9;
   }
   
   double valueHeight = currentHeight - desiredHeight;
