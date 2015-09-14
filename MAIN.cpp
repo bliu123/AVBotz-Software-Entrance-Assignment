@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 using namespace std;
 #ifndef __QUADCOPTER_H__
 #define __QUADCOPTER_H__
@@ -23,13 +24,7 @@ uint8_t getHeight()
   double initialHeight = rand() % (255 - 0 + 1) + 0;
   return initialHeight;
 }
-void setFR(uint8_t)
-{
-  FR = initialHeight
-}
-void setFL(uint8_t)
-void setBR(uint8_t)
-void setBL(uint8_t)
+
 #endif
 
 int main()
@@ -40,6 +35,9 @@ int main()
   double desiredPitch;
   double desiredRoll;
   double desiredHeight;
+  double currentPitch;
+  double currentRoll;
+  double currentHeight;
   
   cout << "Enter Desired Height (1-255): ";
   cin >> desiredHeight;
@@ -49,23 +47,91 @@ int main()
     return 0;
   }
   
+  cout << "Desired Pitch: " << desiredPitch << "\n";
+  cout << "Desired Roll: " << desiredRoll << "\n";
+  cout << "Desired Height: " << desiredHeight << "\n\n";
+  usleep(5000000);//allow user to keep track of outputs
+  
   cout << "Initial Pitch: ";
   cout << initialPitch << "\n";
   cout << "Initial Roll: ";
   cout << initialRoll << "\n";
   cout << "Initial Height: ";
   cout << initialHeight << "\n";
+  usleep(5000000);//allow user to keep track of outputs
   
-  cout << "Desired Pitch: " << desiredPitch << "\n";
-  cout << "Desired Roll: " << desiredRoll << "\n";
-  cout << "Desired Height: " << desiredHeight << "\n";
+  currentPitch = initialPitch;
+  currentRoll = initialRoll;
+  currentHeight = initialHeight;
   
   while (true){
-    
+  cout << "\nCurrent Pitch: ";
+  cout << currentPitch;
+  cout << "\n";
+  cout << "Current Roll: ";
+  cout << currentRoll;
+  cout << "\n";
+  cout << "Current Height: ";
+  cout << currentHeight;
+  cout << "\n\n";
+  cout << "Readjusting...";
+  cout << "\n";
+  usleep(5000000);
+  
+  if (currentPitch < desiredPitch || currentPitch > desiredPitch)
+  {
+    currentPitch *= .5;
+  }
+  if (-1 > currentPitch < 1)//close enough; time to round down...
+  {
+    currentPitch = 0;
   }
   
+  if (currentRoll < desiredRoll || currentRoll > desiredRoll)
+  {
+    currentRoll *= .5;
+  }
+  if (-1 > currentRoll < 1)//close enough; time to round down...
+  {
+    currentRoll = 0;
+  }
   
+  if (currentHeight < desiredHeight)
+  {
+    cout << "Motors too weak!\n";
+    currentHeight *= 1.1;
+  }
+  if (currentHeight > desiredHeight)
+  {
+    cout << "Motors too strong!\n";
+    currentHeight *= .90;
+  }
   
+  double valueHeight = currentHeight - desiredHeight;
   
-}
+  if (-1 > valueHeight < 1)
+  {
+    currentHeight = desiredHeight;
+  }
+  
+  if (currentPitch == desiredPitch && currentRoll == desiredRoll && currentHeight == desiredHeight)
+  {
+     cout << "\nCurrent Pitch: ";
+  cout << currentPitch;
+  cout << "\n";
+  cout << "Current Roll: ";
+  cout << currentRoll;
+  cout << "\n";
+  cout << "Current Height: ";
+  cout << currentHeight;
+  cout << "\n\n";
+    cout << "Quadcopter fully stabilized.";
+    break;
+  }
+  }
+  
+} 
+
+  
+
 
