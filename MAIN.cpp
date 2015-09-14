@@ -80,7 +80,7 @@ int main()
   
   if (currentPitch < desiredPitch || currentPitch > desiredPitch)
   {
-    currentPitch *= .5;
+    currentPitch *= .75;
   }
   if (-1 < currentPitch && 1 > currentPitch)//close enough; time to round down...
   {
@@ -89,7 +89,7 @@ int main()
   
   if (currentRoll < desiredRoll || currentRoll > desiredRoll)
   {
-    currentRoll *= .5;
+    currentRoll *= .75;
   }
   if (-1 < currentRoll && 1 > currentRoll)//close enough; time to round down...
   {
