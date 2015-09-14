@@ -31,6 +31,7 @@ int main()
   double initialPitch = getPitch();
   double initialRoll = getRoll();
   double initialHeight = getHeight();
+  double desiredHeight
   cout << "Enter Desired Height (1-255): ";
   cin >> desiredHeight;
   cout << "Initial Pitch: ";
